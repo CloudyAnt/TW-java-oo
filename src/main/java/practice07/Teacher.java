@@ -18,12 +18,12 @@ public class Teacher extends Person{
     }
 
     public String introduce() {
-        String teachingClass = klass.getNumber() == 0 ? "No Class" : "Class " + klass;
+        String teachingClass = klass == null || klass.getNumber() == 0 ? "No Class" : "Class " + klass.getNumber();
         return super.introduce() + " I am a Teacher. I teach " + teachingClass + ".";
     }
 
     public String introduceWith(Student student) {
         String teachingStudent = klass.getNumber() == student.getKlass().getNumber() ? "" : "don't ";
-        return super.introduce() + " I am a Teacher. I " + teachingStudent + "teach " + student.getName();
+        return super.introduce() + " I am a Teacher. I " + teachingStudent + "teach " + student.getName() + ".";
     }
 }

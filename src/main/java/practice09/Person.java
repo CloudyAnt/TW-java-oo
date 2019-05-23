@@ -11,6 +11,10 @@ public class Person {
         this.age = age;
     }
 
+    public int getId() {
+        return id;
+    }
+
     public int getAge() {
         return age;
     }
@@ -21,5 +25,16 @@ public class Person {
 
     public String introduce() {
         return "My name is " + name + ". I am " + age + " years old.";
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (obj instanceof Person) {
+            Person person = (Person)obj;
+            if (person.getId() == this.getId()) {
+                return true;
+            }
+        }
+        return super.equals(obj);
     }
 }

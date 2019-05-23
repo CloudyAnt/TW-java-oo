@@ -1,5 +1,7 @@
 package practice09;
 
+import java.io.IOException;
+
 public class Klass {
 
     private int number;
@@ -18,8 +20,11 @@ public class Klass {
     }
 
     public void assignLeader(Student student) {
-        appendMember(student);
-        this.leader = student;
+        if (student.getKlass().getNumber() == this.getNumber()) {
+            this.leader = student;
+        } else {
+            System.out.print("It is not one of us.\n");
+        }
     }
 
     public void appendMember(Student student) {
